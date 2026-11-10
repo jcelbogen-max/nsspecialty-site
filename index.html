@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NorthStar Specialty Group — Specialty Insurance Program Management</title>
+<meta name="description" content="NorthStar Specialty Group is a specialty insurance program management platform. We build, launch, and manage insurance programs — including HealthStar RRG and CareStar RRG — with deep expertise in underwriting oversight and regulatory strategy.">
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="-120 -115 240 235"><polygon points="22.45,-105.64 33.44,-30.11 107.41,-11.29 38.97,22.50 43.93,98.66 -9.36,44.02 -80.26,72.27 -44.75,4.70 -93.53,-54.00 -18.30,-41.11" fill="%231B2A5E"/><polygon points="-64.21,-5.75 -44.03,19.63 -12.79,10.96 -30.68,38.00 -12.79,65.04 -44.03,56.37 -64.21,81.75 -65.63,49.36 -96.00,38.00 -65.63,26.64" fill="%233FA9F5"/></svg>'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#1C75BC; --navy:#1B2A5E; --light:#3FA9F5;
+    --ink:#22283a; --muted:#5d6575; --bg:#ffffff; --panel:#f4f7fb;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Raleway',Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 28px}
+  .brand{display:inline-flex;align-items:baseline;font-weight:500;letter-spacing:.03em;line-height:1;white-space:nowrap}
+  .brand .b1{color:var(--blue)}
+  .brand .b2{color:var(--navy)}
+  .brand svg{height:.78em;width:auto;align-self:center;transform:translateY(.02em);margin:0 .015em}
+  .brand-sub{color:var(--blue);font-weight:500;letter-spacing:.34em;text-transform:none}
+  header{position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid #e8ecf2;z-index:50}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .nav .brand{font-size:24px}
+  .nav nav a{color:var(--navy);text-decoration:none;font-weight:600;font-size:14px;letter-spacing:.4px;margin-left:30px}
+  .nav nav a:hover{color:var(--blue)}
+  .nav nav a.cta{background:var(--navy);color:#fff;padding:10px 20px;border-radius:6px}
+  .nav nav a.cta:hover{background:var(--blue)}
+  .hero{padding:100px 0 90px;background:
+    radial-gradient(1000px 500px at 85% -10%, rgba(63,169,245,.10), transparent 60%),
+    radial-gradient(800px 420px at -10% 110%, rgba(28,117,188,.08), transparent 60%)}
+  .hero .brand{font-size:clamp(44px,7vw,72px)}
+  .hero .brand-sub{font-size:clamp(15px,2.4vw,24px);margin:10px 0 46px;display:block}
+  .hero h1{font-size:clamp(28px,4.4vw,44px);line-height:1.18;color:var(--navy);font-weight:600;max-width:760px}
+  .hero h1 em{font-style:normal;color:var(--blue)}
+  .hero p{max-width:640px;margin-top:22px;font-size:18px;color:var(--muted)}
+  .hero .btns{margin-top:36px}
+  .hero .btns a{display:inline-block;text-decoration:none;font-weight:600;font-size:15px;border-radius:8px;padding:14px 28px;margin-right:14px}
+  .hero .btns a.primary{background:var(--navy);color:#fff}
+  .hero .btns a.primary:hover{background:var(--blue)}
+  .hero .btns a.ghost{color:var(--navy);border:2px solid var(--navy)}
+  .hero .btns a.ghost:hover{color:var(--blue);border-color:var(--blue)}
+  section{padding:84px 0}
+  .kicker{font-size:12px;font-weight:700;letter-spacing:2.5px;color:var(--blue);text-transform:uppercase;margin-bottom:14px}
+  h2{font-size:clamp(24px,3vw,32px);color:var(--navy);font-weight:600;margin-bottom:18px}
+  .lead{font-size:17px;color:var(--muted);max-width:720px}
+  .caps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;margin-top:44px}
+  .cap{background:var(--panel);border:1px solid #e6ecf4;border-radius:12px;padding:26px}
+  .cap h3{font-size:16.5px;color:var(--navy);font-weight:700;margin-bottom:8px}
+  .cap p{font-size:14.5px;color:var(--muted)}
+  .cap .dot{width:34px;height:4px;border-radius:2px;background:linear-gradient(90deg,var(--blue),var(--light));margin-bottom:16px}
+  #programs{background:var(--panel)}
+  .programs{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:26px;margin-top:44px}
+  .program{background:#fff;border:1px solid #e6ecf4;border-radius:14px;padding:34px}
+  .program .brand{font-size:26px;margin-bottom:20px}
+  .program h3{font-size:19px;color:var(--navy);font-weight:700;margin-bottom:10px}
+  .program p{font-size:15px;color:var(--muted)}
+  .program .tag{display:inline-block;margin-top:18px;font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--blue);background:rgba(28,117,188,.08);border-radius:999px;padding:6px 14px}
+  .leader{display:flex;gap:36px;align-items:flex-start;flex-wrap:wrap;margin-top:34px}
+  .leader .card{background:var(--panel);border:1px solid #e6ecf4;border-radius:14px;padding:34px;max-width:720px}
+  .leader h3{color:var(--navy);font-size:19px;font-weight:700}
+  .leader .role{color:var(--blue);font-weight:600;font-size:14px;margin-bottom:14px}
+  .leader p{font-size:15px;color:var(--muted)}
+  #contact .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:40px}
+  .con{background:var(--panel);border:1px solid #e6ecf4;border-radius:12px;padding:26px}
+  .con .k{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+  .con p, .con a{font-size:15.5px;color:var(--ink);text-decoration:none;font-weight:500}
+  .con a:hover{color:var(--blue)}
+.con .copy{margin-left:10px;background:var(--navy);color:#fff;border:0;border-radius:6px;font:600 12px 'Raleway',Arial,sans-serif;padding:6px 12px;cursor:pointer;vertical-align:middle}
+.con .copy:hover{background:var(--blue)}
+  footer{border-top:1px solid #e8ecf2;padding:34px 0 44px}
+  footer .row{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center}
+  footer .brand{font-size:19px;opacity:.92}
+  footer p{font-size:12.5px;color:#8a92a3}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <span class="brand"><span class="b1">NORTH</span><span class="b2">ST</span><svg viewBox="-120 -115 240 235" aria-hidden="true"><polygon points="22.45,-105.64 33.44,-30.11 107.41,-11.29 38.97,22.50 43.93,98.66 -9.36,44.02 -80.26,72.27 -44.75,4.70 -93.53,-54.00 -18.30,-41.11" fill="#1B2A5E"/><path d="M -112 100 Q -30 62 12 -2 Q -42 30 -95 72 Z" fill="white"/><polygon points="-64.21,-5.75 -44.03,19.63 -12.79,10.96 -30.68,38.00 -12.79,65.04 -44.03,56.37 -64.21,81.75 -65.63,49.36 -96.00,38.00 -65.63,26.64" fill="none" stroke="white" stroke-width="10.0" stroke-linejoin="round"/><polygon points="-64.21,-5.75 -44.03,19.63 -12.79,10.96 -30.68,38.00 -12.79,65.04 -44.03,56.37 -64.21,81.75 -65.63,49.36 -96.00,38.00 -65.63,26.64" fill="#3FA9F5"/></svg><span class="b2">R</span></span>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#programs">Programs</a>
+      <a href="#leadership">Leadership</a>
+      <a class="cta" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="brand"><span class="b1">NORTH</span><span class="b2">ST</span><svg viewBox="-120 -115 240 235" aria-hidden="true"><polygon points="22.45,-105.64 33.44,-30.11 107.41,-11.29 38.97,22.50 43.93,98.66 -9.36,44.02 -80.26,72.27 -44.75,4.70 -93.53,-54.00 -18.30,-41.11" fill="#1B2A5E"/><path d="M -112 100 Q -30 62 12 -2 Q -42 30 -95 72 Z" fill="white"/><polygon points="-64.21,-5.75 -44.03,19.63 -12.79,10.96 -30.68,38.00 -12.79,65.04 -44.03,56.37 -64.21,81.75 -65.63,49.36 -96.00,38.00 -65.63,26.64" fill="none" stroke="white" stroke-width="10.0" stroke-linejoin="round"/><polygon points="-64.21,-5.75 -44.03,19.63 -12.79,10.96 -30.68,38.00 -12.79,65.04 -44.03,56.37 -64.21,81.75 -65.63,49.36 -96.00,38.00 -65.63,26.64" fill="#3FA9F5"/></svg><span class="b2">R</span></span>
+    <span class="brand-sub">Specialty Group</span>
+    <h1>Specialty insurance programs, <em>built and managed</em> from first filing to first policy — and beyond.</h1>
+    <p>NorthStar Specialty Group is a program management platform. We develop, launch, and operate specialty insurance programs with disciplined underwriting oversight and regulatory strategy at the core.</p>
+    <div class="btns">
+      <a class="primary" href="#programs">Our Programs</a>
+      <a class="ghost" href="#about">What We Do</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="kicker">What We Do</div>
+    <h2>One platform. Every discipline a program needs.</h2>
+    <p class="lead">From concept and licensure through day-to-day operations, NorthStar provides the management backbone for specialty insurance programs — so each program can focus on serving its insureds.</p>
+    <div class="caps">
+      <div class="cap"><div class="dot"></div><h3>Program Development &amp; Launch</h3><p>Feasibility, structuring, capitalization strategy, and licensure — we've taken programs from concept to licensed carrier.</p></div>
+      <div class="cap"><div class="dot"></div><h3>Underwriting Oversight</h3><p>Disciplined risk selection frameworks, guidelines, and ongoing portfolio monitoring across every program we manage.</p></div>
+      <div class="cap"><div class="dot"></div><h3>Regulatory Strategy</h3><p>Filings, examinations, and ongoing compliance — deep experience with risk retention groups and specialty structures.</p></div>
+      <div class="cap"><div class="dot"></div><h3>Program Operations</h3><p>Policy administration, reinsurance coordination, vendor management, and financial oversight, end to end.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="programs">
+  <div class="wrap">
+    <div class="kicker">Programs Under Management</div>
+    <h2>Purpose-built programs, one standard of care.</h2>
+    <div class="programs">
+      <div class="program">
+        <span class="brand"><span class="b1">HEALTH</span><span class="b2">ST</span><svg viewBox="-120 -115 240 235" aria-hidden="true"><polygon points="22.45,-105.64 33.44,-30.11 107.41,-11.29 38.97,22.50 43.93,98.66 -9.36,44.02 -80.26,72.27 -44.75,4.70 -93.53,-54.00 -18.30,-41.11" fill="#1B2A5E"/><path d="M -112 100 Q -30 62 12 -2 Q -42 30 -95 72 Z" fill="white"/><polygon points="-64.21,-5.75 -44.03,19.63 -12.79,10.96 -30.68,38.00 -12.79,65.04 -44.03,56.37 -64.21,81.75 -65.63,49.36 -96.00,38.00 -65.63,26.64" fill="none" stroke="white" stroke-width="10.0" stroke-linejoin="round"/><polygon points="-64.21,-5.75 -44.03,19.63 -12.79,10.96 -30.68,38.00 -12.79,65.04 -44.03,56.37 -64.21,81.75 -65.63,49.36 -96.00,38.00 -65.63,26.64" fill="#3FA9F5"/></svg><span class="b2">R</span></span>
+        <h3>HealthStar RRG</h3>
+        <p>A member-owned risk retention group providing liability coverage for long-term care providers — nursing homes, assisted living, residential care, and specialized care facilities — built to reduce and stabilize liability premiums with a reliable alternative to traditional carriers.</p>
+        <span class="tag">Long-Term Care Liability</span>
+      </div>
+      <div class="program">
+        <span class="brand"><span class="b1">CARE</span><span class="b2">ST</span><svg viewBox="-120 -115 240 235" aria-hidden="true"><polygon points="22.45,-105.64 33.44,-30.11 107.41,-11.29 38.97,22.50 43.93,98.66 -9.36,44.02 -80.26,72.27 -44.75,4.70 -93.53,-54.00 -18.30,-41.11" fill="#1B2A5E"/><path d="M -112 100 Q -30 62 12 -2 Q -42 30 -95 72 Z" fill="white"/><polygon points="-64.21,-5.75 -44.03,19.63 -12.79,10.96 -30.68,38.00 -12.79,65.04 -44.03,56.37 -64.21,81.75 -65.63,49.36 -96.00,38.00 -65.63,26.64" fill="none" stroke="white" stroke-width="10.0" stroke-linejoin="round"/><polygon points="-64.21,-5.75 -44.03,19.63 -12.79,10.96 -30.68,38.00 -12.79,65.04 -44.03,56.37 -64.21,81.75 -65.63,49.36 -96.00,38.00 -65.63,26.64" fill="#3FA9F5"/></svg><span class="b2">R</span></span>
+        <h3>CareStar RRG</h3>
+        <p>Licensed in 2026 to serve human services organizations — social service agencies, youth care providers, affordable housing, and nonprofits — with general and professional liability coverage built around their mission.</p>
+        <span class="tag">Human Services &amp; Youth Care Liability</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="leadership">
+  <div class="wrap">
+    <div class="kicker">Leadership</div>
+    <h2>Experienced, hands-on leadership.</h2>
+    <div class="leader">
+      <div class="card">
+        <h3>Jacob C. Elbogen, Esq.</h3>
+        <div class="role">Chief Executive Officer</div>
+        <p>Jacob founded and leads NorthStar Specialty Group, and has built and launched each program on the platform — including HealthStar RRG and the newly licensed CareStar RRG. An attorney by training, he combines regulatory strategy, underwriting oversight, and hands-on program operations under one roof.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="kicker">Contact</div>
+    <h2>Talk to us about your program.</h2>
+    <div class="grid">
+      <div class="con"><div class="k">Email</div><a href="mailto:info@nsspecialty.com">info@nsspecialty.com</a> <button type="button" class="copy" data-copy="info@nsspecialty.com">Copy</button></div>
+      <div class="con"><div class="k">LinkedIn</div><a href="https://www.linkedin.com/company/northstar-specialty-group" target="_blank" rel="noopener">NorthStar Specialty Group</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap row">
+    <span class="brand"><span class="b1">NORTH</span><span class="b2">ST</span><svg viewBox="-120 -115 240 235" aria-hidden="true"><polygon points="22.45,-105.64 33.44,-30.11 107.41,-11.29 38.97,22.50 43.93,98.66 -9.36,44.02 -80.26,72.27 -44.75,4.70 -93.53,-54.00 -18.30,-41.11" fill="#1B2A5E"/><path d="M -112 100 Q -30 62 12 -2 Q -42 30 -95 72 Z" fill="white"/><polygon points="-64.21,-5.75 -44.03,19.63 -12.79,10.96 -30.68,38.00 -12.79,65.04 -44.03,56.37 -64.21,81.75 -65.63,49.36 -96.00,38.00 -65.63,26.64" fill="none" stroke="white" stroke-width="10.0" stroke-linejoin="round"/><polygon points="-64.21,-5.75 -44.03,19.63 -12.79,10.96 -30.68,38.00 -12.79,65.04 -44.03,56.37 -64.21,81.75 -65.63,49.36 -96.00,38.00 -65.63,26.64" fill="#3FA9F5"/></svg><span class="b2">R</span></span>
+    <p>© 2026 NorthStar Specialty Group, a d/b/a of HealthStar Advisors LLC. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.copy').forEach(function(b){
+  b.addEventListener('click',function(){
+    var t=b.getAttribute('data-copy');
+    var done=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1800)};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done)}
+    else{var i=document.createElement('input');i.value=t;document.body.appendChild(i);i.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(i);done()}
+  });
+});
+</script>
+</body>
+</html>
